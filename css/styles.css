@@ -66,3 +66,70 @@
 .carousel-dots .dot.active {
   background-color: #333;
 }
+
+
+/* --- Banner: make it a solid black panel that covers the site-wide bg --- */
+#banner {
+  position: relative;
+  background: rgba(10, 10, 10) !important;   /* solid black */
+  color: #fff;                    /* readable text on black */
+  isolation: isolate;             /* create stacking context (iOS fix) */
+  z-index: 2;                     /* sit above any page-wide bg layers */
+
+  /* viewport height: handle mobile Safari URL bar correctly */
+  height: 100vh;                  /* fallback */
+  height: 100dvh;                 /* iOS 16+ correct dynamic viewport */
+  min-height: 35em;               /* keep your original minimum */
+  overflow: hidden;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* Banner overlay (belt-and-braces): guarantees a black cover only in the banner area */
+#banner::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(10, 10, 10) ;               /* keep it solid; change to rgba(...) for a tint */
+  z-index: 0;                     /* behind content, above page bg */
+  pointer-events: none;
+}
+
+/* Ensure banner content sits above the overlay */
+#banner .inner,
+#banner .more {
+  position: relative;
+  z-index: 1;
+}
+
+/* If the theme paints translucent decorations on ::after, neutralize them */
+#banner::after {
+  background: none !important;
+  opacity: 1 !important;
+}
+
+/* --- iOS-specific fix if your global background uses `background-attachment: fixed` --- */
+@supports (-webkit-touch-callout: none) {
+  html, body, #page-wrapper {
+    background-attachment: scroll !important;
+  }
+}
+
+/* --- Your logo sizing from earlier, including small-screen limits --- */
+.site-logo {
+  display: block;
+  margin: 0 auto 1rem;
+  height: auto; width: auto;      /* preserve aspect ratio */
+  max-height: 500px;              /* desktop bounds */
+  opacity: 0.9; 
+}
+
+@media (max-width: 600px) {
+  .site-logo {
+    max-height: 60px;             /* phone bounds */
+    max-width: 120px;
+  }
+}
+

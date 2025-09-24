@@ -128,7 +128,7 @@
 
 @media (max-width: 600px) {
   .site-logo {
-    max-height: 300px;             /* phone bounds */
+    max-height: 200px;             /* phone bounds */
   }
 }
 

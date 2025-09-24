@@ -126,9 +126,10 @@
   opacity: 0.9; 
 }
 
-@media (max-width: 500px) {
+@media (max-width: 600px) {
   .site-logo {
-    max-width: 300px;             /* phone bounds */
+    /* phone bounds */
+    max-width: 315px;
   }
 }
 

@@ -71,7 +71,7 @@
 /* --- Banner: make it a solid black panel that covers the site-wide bg --- */
 #banner {
   position: relative;
-  background: rgba(10, 10, 10) !important;   /* solid black */
+  background: rgb(10, 10, 10) !important;   /* solid black */
   color: #fff;                    /* readable text on black */
   isolation: isolate;             /* create stacking context (iOS fix) */
   z-index: 2;                     /* sit above any page-wide bg layers */
@@ -92,7 +92,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgba(10, 10, 10) ;               /* keep it solid; change to rgba(...) for a tint */
+  background: rgb(10, 10, 10) ;               /* keep it solid; change to rgba(...) for a tint */
   z-index: 0;                     /* behind content, above page bg */
   pointer-events: none;
 }

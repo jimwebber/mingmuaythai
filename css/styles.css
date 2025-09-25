@@ -92,7 +92,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgb(10, 10, 10) ;               /* keep it solid; change to rgba(...) for a tint */
+  background: rgb(10, 10, 10) ;              
   z-index: 0;                     /* behind content, above page bg */
   pointer-events: none;
 }
@@ -123,7 +123,6 @@
   margin: 0 auto 1rem;
   height: auto; width: auto;      /* preserve aspect ratio */
   max-height: 500px;              /* desktop bounds */
-  opacity: 1; 
 }
 
 @media (max-width: 600px) {

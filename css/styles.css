@@ -92,7 +92,7 @@
   content: "";
   position: absolute;
   inset: 0;
-  background: rgb(10, 10, 10) ;              
+  background: rgb(10, 10, 10);
   z-index: 0;                     /* behind content, above page bg */
   pointer-events: none;
 }
@@ -123,12 +123,14 @@
   margin: 0 auto 1rem;
   height: auto; width: auto;      /* preserve aspect ratio */
   max-height: 500px;              /* desktop bounds */
+  background: rgb(10, 10, 10);
 }
 
 @media (max-width: 600px) {
   .site-logo {
     /* phone bounds */
     max-width: 315px;
+    background: rgb(10, 10, 10);
   }
 }
 

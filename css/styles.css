@@ -123,7 +123,7 @@
   margin: 0 auto 1rem;
   height: auto; width: auto;      /* preserve aspect ratio */
   max-height: 500px;              /* desktop bounds */
-  opacity: 0.9; 
+  opacity: 1; 
 }
 
 @media (max-width: 600px) {
